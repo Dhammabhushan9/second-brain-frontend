@@ -6,9 +6,9 @@
  export interface buttonProps {
     variable:variables;
     size:sizes;
-    text:String;
-    StartIcon?:any;
-    EndIcon?:any;
+    text:string;
+    StartIcon?: React.ReactNode;
+    EndIcon?: React.ReactNode;
     onClick:()=>void;
 }
 
@@ -20,9 +20,9 @@
 
 
     // Style for the size
-    const sizeStyle={
+     const sizeStyle={
         "sm":"p-2 rounded-xl  ",
-        "lg":"pl-8 pr-8 pt-2 pb-2 rounded-2xl h- "
+        "lg":"pl-16 pr-16 pt-4 pb-4 rounded-2xl   "
     }
 
     //defult Style for additional style
@@ -32,9 +32,8 @@
 export const Button=(pros:buttonProps)=>{
                             //for //for color                 //size               //defult
     return <div className={ `  ${variableStyle[pros.variable]} ${sizeStyle[pros.size]} ${defaultStyle}` } onClick={pros.onClick}>
-            <p>{pros.StartIcon}</p>
-            <p>{pros.text}</p> 
-            <p>{pros.EndIcon}</p>
+          {pros.StartIcon? <div className="pr-2">{pros.StartIcon}</div> :null}{pros.text} 
+           {pros.EndIcon} 
 
     </div>
 }
