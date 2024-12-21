@@ -1,7 +1,7 @@
 
 // componet interface for button
  
- type variables ="primary"|"secondary";
+ type variables ="primary"|"secondary"|"nutral";
  type sizes="sm"|"lg";
  export interface buttonProps {
     variable:variables;
@@ -14,8 +14,9 @@
 
     //condition for the button color
     const variableStyle={
-        "primary":"bg-purple-600",
-        "secondary":"bg-purple-300"
+        "primary":"text- bg-purple-600",
+        "secondary":"bg-purple-500 text-purple-600",
+        "nutral":"bg-red-600 text-black-600"
     }
 
 
@@ -26,12 +27,12 @@
     }
 
     //defult Style for additional style
-    const defaultStyle="text-white flex justify-center m-3";
+    const defaultStyle="cursor-pointer px-4 py-2 text-white flex justify-center m-3";
 
 
 export const Button=(pros:buttonProps)=>{
                             //for //for color                 //size               //defult
-    return <div className={ `  ${variableStyle[pros.variable]} ${sizeStyle[pros.size]} ${defaultStyle}` } onClick={pros.onClick}>
+    return <div className={ ` ${defaultStyle} ${variableStyle[pros.variable]} ${sizeStyle[pros.size]} ` } onClick={pros.onClick}>
           {pros.StartIcon? <div className="pr-2">{pros.StartIcon}</div> :null}{pros.text} 
            {pros.EndIcon} 
 
