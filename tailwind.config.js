@@ -6,7 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        custom: ['"Playfair Display"', 'serif'], // Add your font here
+      },
       colors:{
+        bento:{
+          100:"#f9a474",
+          200:"#c3b2e7",
+          300:"#f682a5",
+          400:"#c9da8f",
+          500:"#fedf6f",
+          600:"#b8cedc"
+        },
         gold:{ 
           100:'#FFD700'
         },
